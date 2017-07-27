@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- CSS Imports -->
+    <link rel="stylesheet" href="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/themes/css/cartodb.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.2.3/leaflet.draw.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <!-- Choose a frontend framework CSS file: -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div class="container-fluid">
+      <div class="row">
+        <!-- sidebar1 -->
+        <div class="col-md-3" id="sidebar1">
+          <ul class="nav nav-tabs nav-justified">
+              <li role="presentation" class="active" id="MP1"><a href="#">Data</a></li>
+              <li role="presentation" id="MP2"><a href="#">Concept</a></li>
+              <li role="presentation" id="MP3"><a href="#">Analysis</a></li>
+            </ul>
+          <div class="MainPages" id="MainPage1">
+            <nav class="navbar navbar-default">
+              <div class="navbar-header">
+                <a href="#">Traffic Counts</a>
+              </div>
+              <div class="container-fluid clearfix">
+                <div class="topright-button" style="float: right">
+                  <!-- Split button -->
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-danger" id="Modes">Modes</button>
+                    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="caret"></span>
+                      <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                      <li role="veh" class="TModes"><a href="#" >Vehicle</a></li>
+                      <li role="bic" class="TModes"><a href="#" >Bicycle</a></li>
+                      <li role="ped" class="TModes"><a href="#" >Pedestrian</a></li>
+                      <li role="separator" class="divider"></li>
+                      <li role="ResetM"><a href="#" >Reset Map</a></li>
+                    </ul>
+                  </div>
+                  <!-- Split button Ends-->
+                </div>
+              </div>
+            </nav>
+            <div class = "page" id="item10">
+              <div class="item">
+                <h2 class="item-heading">Abstract</h2>
+                <div>The analysis can be divided into three parts: Data, Concept and Analysis.
+                  By clicking the "Data", "Concept" and "Analysis" tabs above, your can jump to corresponding part.
+                </div>
+              </div>
+              <div class="item">
+                <h2 class="item-heading">Traffic Counts</h2>
+                <div>The data to be analyzed is the traffic counts of pedestrian, bicycle and vehicle in central Philadelphia.
+                  <br><br>
+                  By selecting different traffic modes: "Vehicle", "Pedestrian", "Bicycle" in "Modes" button,
+                  you can see the location of sensors and the average annual daily counts of each traffic mode.
+                  <br><br>
+                  Clicking "Modes" button itself, you would be brought back to this page.
+                </div>
+              </div>
+            </div>
+            <div class = "page" id="item11">
+              <div class="item">
+                <h2 class="item-heading">Vehicle Traffic Flow</h2>
+                <div>The default map shows the location of sensors recording the vehicle traffic flow.<br>
+                The size of a yellow circle represents the value of the traffic flow the sensor records.
+                <br><br>
+                The setting year of traffic flow recording sensors ranges from 1996 to 2017.<br>
+                Click the "Autoplay" button, you can see the process of setting sensors in each year.
+                <br><br>
+                In the analysis, only data collected after 2010 would be used.
+                </div>
+              </div>
+              <button type="button" class="btn btn-primary btn-lg" id="Autoplay">
+                Autoplay: Setting years
+              </button>
+              <!-- Button Ends-->
+              <!-- Input Groups-->
+              <div class="input-group" id="input-group">
+                <input type="text" class="form-control" aria-describedby="basic-addon2" id="Year">
+                <span class="input-group-addon" id="basic-addon2">Setting Year of Sensors</span>
+              </div>
+              <!-- Input Groups Ends-->
+            </div>
+            <div class = "page" id="item12">
+              <div class="item">
+                <h2 class="item-heading">Bicycle Traffic Flow</h2>
+                <div>The default map shows the location of sensors recording the bicycle traffic flow.<br>
+                The size of a yellow circle represents the value of the traffic flow the sensor records.</div>
+              </div>
+            </div>
+            <div class = "page" id="item13">
+              <div class="item">
+                <h2 class="item-heading">Pedestrian Traffic Flow</h2>
+                <div>The default map shows the location of sensors recording the pedestrian traffic flow.<br>
+                The size of a yellow circle represents the value of the traffic flow the sensor records.</div>
+              </div>
+            </div>
+          </div>
+          <div class="MainPages" id="MainPage2">
+            <!-- Breadcrumbs -->
+            <ol class="breadcrumb">
+              <!-- <li class="active">&nbsp; Intro</li> -->
+              <li role="21"><a href="#"> &nbsp; Intro </a></li>
+              <li role="22"><a href="#"> Calculation Radius </a></li>
+              <li role="23"><a href="#">Street Density &nbsp;</a></li>
+            </ol>
+            <div class = "page" id="item21">
+              <div class="item">
+                <h2 class="item-heading">Introduction of Concepts</h2>
+                <div>There are two important concepts in the analysis: "Calculation Radius" and "Street Density".
+                  <br><br>
+                  Clicking corresponding text above could bring you to their detailed information pages.<br>
+                  You can get back to this page by clicking the "Intro" text.
+                </div>
+              </div>
+            </div>
+            <div class = "page" id="item22">
+              <div class="item">
+                <h2 class="item-heading">Calculation Radius</h2>
+                <div>Calculation Radius means the range of streets that would be analyzed for a target traffic flow sensor.
+                The value of Calculation Radius would determine the result of Street Density.<br>
+                In this analysis, the Calculation Radius ranges from 400 meters to 14400 meters.
+                <br><br>
+                The map shows that for a specific target sensor, the streets within different Calculation Radius.
+                You can change the value of Calculation Radius by moving the dot on the slider.
+                </div>
+              </div>
+              <!-- <p id='Radius Title'>Set Calculation Radius</p> -->
+              <label id='Radius'><span id="400">Radius (Default: 400)</span></label>
+              <input id='slider' type='range' min='1' max='10' step='1' value='1'/>
+            </div>
+            <div class = "page" id="item23">
+              <div class="item">
+                <h2 class="item-heading">Street Density</h2>
+                <div>Street Density is a methodology to convert the geometirc struture of street network to number.<br>
+                It's an effective way to reveal the centrality of a given street network.
+                <br><br>
+                The streets would have different Street Density with different Calculation Radius.<br>
+                By clicking the page navigation below, you can see the Street Density map with different Calculation Radius.
+                </div>
+              </div>
+              <!-- Page navigation-->
+              <nav aria-label="Page navigation" id="PNavi">
+                <ul class="pagination">
+                  <li id="SBP" role="SB"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                  <li id="SB1" role="SB"><a href="#">1</a></li>
+                  <li id="SB2" role="SB"><a href="#">2</a></li>
+                  <li id="SB3" role="SB"><a href="#">3</a></li>
+                  <li id="SB4" role="SB"><a href="#">4</a></li>
+                  <li id="SB5" role="SB"><a href="#">5</a></li>
+                  <li id="SB6" role="SB"><a href="#">6</a></li>
+                  <li id="SB7" role="SB"><a href="#">7</a></li>
+                  <li id="SBN" role="SB"><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+                </ul>
+              </nav>
+              <!-- Page navigation Ends-->
+              <!-- Button Group -->
+              <div class="list-group" id="buttonGroup">
+                <button type="button" class="list-group-item" id="SBB1">
+                  <span class="label label-primary">1</span>
+                  &nbsp; Street Density: Radius 0400 meters</button>
+                <button type="button" class="list-group-item" id="SBB2">
+                  <span class="label label-primary">2</span>
+                  &nbsp; Street Density: Radius 0800 meters</button>
+                <button type="button" class="list-group-item" id="SBB3">
+                  <span class="label label-primary">3</span>
+                  &nbsp; Street Density: Radius 1200 meters</button>
+                <button type="button" class="list-group-item" id="SBB4">
+                  <span class="label label-primary">4</span>
+                  &nbsp; Street Density: Radius 1600 meters</button>
+                <button type="button" class="list-group-item" id="SBB5">
+                  <span class="label label-primary">5</span>
+                  &nbsp; Street Density: Radius 2400 meters</button>
+                <button type="button" class="list-group-item" id="SBB6">
+                  <span class="label label-primary">6</span>
+                  &nbsp; Street Density: Radius 4800 meters</button>
+                <button type="button" class="list-group-item" id="SBB7">
+                  <span class="label label-primary">7</span>
+                  &nbsp; Street Density: Radius 9600 meters</button>
+              </div>
+              <!-- Button Group Ends -->
+
+            </div>
+          </div>
+          <div class="MainPages" id="MainPage3">
+            <!-- <div class = "page" id="item31"> -->
+              <div class="item">
+                <h2 class="item-heading">Regression Analysis</h2>
+                <div>Regression models of three traffic modes were built, based on the traffic flow data and street density.
+                  <br><br>
+                  Click the button below to see the result of the three models.The width of each street segment reprents the predicted traffic flow.
+                  <br><br>
+                  By clicking a street segment on the map, you can see it's traffic flow in popup, and it's relative value in Chart below.
+                </div>
+              </div>
+              <!-- Button groups -->
+              <div class="list-group" id="AModes">
+                <button type="button" class="list-group-item" id="PM">
+                  <span class="label label-primary">1</span>&nbsp;&nbsp; Pedestrian Model
+                </button>
+                <button type="button" class="list-group-item" id="BM">
+                  <span class="label label-primary">2</span>&nbsp;&nbsp; Bicycle Model
+                </button>
+                <button type="button" class="list-group-item" id="VM">
+                  <span class="label label-primary">3</span>&nbsp;&nbsp; Vehicle Model
+                </button>
+              </div>
+              <!-- Button groups End -->
+              <button type="button" class="btn btn-primary btn-lg" id="Detial">
+                Click for see details
+              </button>
+            <div id="chart_div"></div>
+          </div>
+        </div>
+        <!-- sidebar1 Ends-->
+        <!-- sidebar2 -->
+        <div class="col-md-2" id="sidebar2">
+          <!-- Pills -->
+          <div>
+            <div class="itemD">
+              <h2 class="item-heading">Pedestrian Model</h2>
+              <div>Multiple R-squared:  0.2932 <br>
+                Adjusted R-squared:  0.2857 <br>
+                p-value: < 2.2e-16 <br>
+                # of Important Variables:  5
+              </div>
+            </div>
+            <div class="itemD">
+              <h2 class="item-heading">Bicycle Model</h2>
+              <div>Multiple R-squared:  0.3265 <br>
+                Adjusted R-squared:  0.3232  <br>
+                p-value: < 2.2e-16 <br>
+                # of Important Variables:  2
+              </div>
+            </div>
+            <div class="itemD">
+              <h2 class="item-heading">Vehicle Model</h2>
+              <div>Multiple R-squared:  0.6873 <br>
+                Adjusted R-squared:  0.6855 <br>
+                p-value: < 2.2e-16 <br>
+                # of Important Variables:  12
+              </div>
+            </div>
+          </div>
+          <!-- Pills End-->
+        </div>
+        <!-- sidebar2 Ends -->
+
+        <!-- Map -->
+        <div class="map col-md-9" id="map" ></div>
+        <!-- Map Ends -->
+      </div>
+    </div>
+
+    <!-- Javascript Imports -->
+    <script src="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/cartodb.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="js/jquery-2.2.0.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <!-- Choose a frontend framework Javascript file: -->
+    <script src="js/setup.js"></script>
+  </body>
+</html>

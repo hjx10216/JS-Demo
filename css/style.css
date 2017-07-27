@@ -1,0 +1,163 @@
+body {
+    padding: 0;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.container{
+  height: 100%;
+  width: 100%;
+  top:0;
+  padding:0;
+}
+
+.map {
+    position: absolute;
+    right: 0px;
+    /*left: 340px;*/
+    height: 100%;
+    top: 0;
+}
+
+
+/* ================================
+      Sidebar Setting
+================================ */
+
+#sidebar1, #sidebar2{
+    overflow-y: 20;
+    padding-top: 20px;
+    height:800px;
+}
+
+#sidebar2{
+  background-color: #EEE;
+  overflow-y: 300;
+}
+
+
+/* ================================
+      Traffic Counts Setting
+================================ */
+
+.page {
+    height:800px;
+    width: 100%;
+}
+
+.item {
+    padding: 10px;
+    background-color: #EEE;
+    overflow-y: 200;
+    position: relative;
+    top:20px;
+    /*height:600px;*/
+}
+
+.item:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.item-heading {
+    font-size: 18px;
+    margin-top: 0;
+    font-weight: bold;
+}
+
+#Autoplay{
+  position:relative;
+  top:40px;
+}
+
+#input-group{
+  position:relative;
+  top:60px;
+}
+
+
+/* ================================
+      Concept Settings
+================================ */
+
+.breadcrumb {
+  position:relative;
+  padding:5px;
+  top:20px;
+}
+
+#Radius, #slider {
+  position:relative;
+  top:40px;
+}
+
+#PNavi{
+  /*position:fixed;*/
+  position:relative;
+  top:20px;
+  left:10px;
+  /*width:100%;*/
+}
+
+#buttonGroup{
+  position:relative;
+  top:20px;
+}
+
+/* ================================
+      Analysis Settings
+================================ */
+#AModes{
+  position:relative;
+  top:20px;
+}
+#Detial{
+  position:relative;
+  top:20px;
+  left:70px;
+}
+#chart_div{
+  position:relative;
+  top:60px;
+}
+.itemD {
+    padding: 10px;
+    background-color: #FFF;
+    overflow-y: 200;
+    position: relative;
+    top:60px;
+    /*height:600px;*/
+}
+/* ================================
+      Other Settings
+================================ */
+
+.navbar-default{
+  padding:5px;
+  top:20px;
+}
+
+.nav-pills{
+  position:relative;
+  top:10px;
+}
+
+.navbar-brand {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* =============
+Media Queries
+============= */
+
+@media screen and (min-width: 480px) and (max-width: 800px) {
+    /*.item {
+        background-color: blue;
+    }*/
+}
+
+@media screen and (max-width: 479px) {
+    /*.item {
+        background-color: red;
+    }*/
+}
